@@ -16,7 +16,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'ShopEase - Seu E-commerce Favorito',
-  description: 'Uma experiência de compra simples e segura',};
+  description: 'Uma experiência de compra simples e segura',
+  icons: {
+    icon: [{ url: 'https://firebasestorage.googleapis.com/v0/b/pessoal-8849f.appspot.com/o/ShopEase%2Fimage.webp?alt=media&token=89cd28c9-02c7-4443-9839-5b7293113a9a', type: 'image/webp' }],
+    shortcut: [{ url: 'https://firebasestorage.googleapis.com/v0/b/pessoal-8849f.appspot.com/o/ShopEase%2Fimage.webp?alt=media&token=89cd28c9-02c7-4443-9839-5b7293113a9a', type: 'image/webp' }],
+    apple: [{ url: 'https://firebasestorage.googleapis.com/v0/b/pessoal-8849f.appspot.com/o/ShopEase%2Fimage.webp?alt=media&token=89cd28c9-02c7-4443-9839-5b7293113a9a', type: 'image/webp' }],
+  },
+};
 
 export default function RootLayout({
   children,

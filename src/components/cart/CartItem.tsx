@@ -14,22 +14,22 @@ export type CartItemProps = {
 
 export function CartItem({ item, onIncrement, onDecrement, onRemove }: CartItemProps) {
   return (
-    <div className="flex items-center p-4 border rounded-lg">
-      <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-md bg-gray-100">
+    <div className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center">
+      <div className="relative h-32 w-full overflow-hidden rounded-md bg-muted sm:h-24 sm:w-24">
         <Image
           src={item.product.image}
           alt={item.product.name}
           fill
           className="object-cover"
-          sizes="96px"
+          sizes="(max-width: 640px) 100vw, 96px"
         />
       </div>
 
-      <div className="ml-4 flex-1">
+      <div className="flex-1 space-y-2 sm:ml-4">
         <h3 className="font-medium">{item.product.name}</h3>
         <p className="text-sm text-muted-foreground">R$ {item.product.price.toFixed(2)}</p>
 
-        <div className="mt-2 flex items-center">
+        <div className="mt-3 flex flex-wrap items-center gap-3">
           <Button
             variant="outline"
             size="sm"
@@ -50,14 +50,14 @@ export function CartItem({ item, onIncrement, onDecrement, onRemove }: CartItemP
         </div>
       </div>
 
-      <div className="ml-4 flex flex-col items-end">
-        <p className="font-medium">
+      <div className="flex flex-col items-start gap-2 sm:ml-4 sm:items-end">
+        <p className="text-base font-semibold sm:text-lg">
           R$ {(item.product.price * item.quantity).toFixed(2)}
         </p>
         <Button
           variant="ghost"
           size="sm"
-          className="mt-2 text-destructive hover:text-destructive/90"
+          className="text-destructive hover:text-destructive/90"
           onClick={() => onRemove(item.product.id)}
         >
           <Trash2 className="mr-1 h-4 w-4" />
